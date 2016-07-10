@@ -10,8 +10,10 @@ Running `init.sh` will **replace** your bash_profile, vim/NeoVim settings, tmux 
 
 ## Install
 
-1. Get Dein Installer `curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh`
-2. Install Dein`sh ./installer.sh ~/.dein`
+Be sure your Xcode and Xcode command line tools are installed and up to date.
+
+1. Get Dein Installer `curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/dein-installer/installer.sh`
+2. Install Dein`sh ~/dein-installer/installer.sh ~/.dein`
 3. Install Other Tools `brew install git tmux ag fzf neovim/neovim/neovim`
 4. Get This Repo `git clone git@github.com:sharpshark28/dotfiles.git ~/dotfilez`
 5. Run Init `bash ~/dotfilez/init.sh`

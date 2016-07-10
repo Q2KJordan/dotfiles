@@ -4,7 +4,7 @@ endif
 
 " PLUGINS
 " Dein Setup
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Shougo/dein.vim')
@@ -83,6 +83,7 @@ set noerrorbells
 if has('nvim')
     " NeoVim Config
     set mouse=r " Disable mouse support in neovim
+    let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 else
     " Regular Vim Config
     set backspace=indent,eol,start " Fix Backspace to Work As You'd Expect
