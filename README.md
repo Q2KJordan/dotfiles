@@ -33,16 +33,23 @@ Get started in your project dir with `nvim` and enjoy!
   * Reopen last file `<Space> <Space>`
 * Mouse support is disabled
   * (can be enabled in NeoVim with iTerm2 by setting `set mouse=a`)
-* Nerdtree (file tree)
-  * Toggle `<Space> d`
-  * Open from current file `<Space> D`
-* Sneak
-  * `f{char}{char}` sneaks forward
-  * `F{char}{char}` sneaks backward
-* Ag (The Silver Searcher)
-  * `<Space> a`
-* Fuzzy File Finder
-  * `<Space> ff`
+* Navigating Between Files
+  * Nerdtree (file tree)
+    * Toggle `<Space> d`
+    * Open from current file `<Space> D`
+  * Ag (The Silver Searcher)
+    * `<Space> a`
+  * Fuzzy File Finder
+    * `<Space> ff`
+* Navigating Within a File
+  * Between Words
+    * `w` Next Word
+    * `b` Previous (Back) Word
+    * `,w` Next Word Camelcase
+    * `,b` Previous (Back) Word Camelcase
+  * Sneak
+    * `f{char}{char}` sneaks forward
+    * `F{char}{char}` sneaks backward
 * Linting happens on file safe
   * TODO Soon this will happen live!
   * Use NeoVim if you want this to be async

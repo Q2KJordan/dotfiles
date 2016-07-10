@@ -1,5 +1,6 @@
-
-" PLUGINS
+"""""""""""""""""""
+" INSTALL PLUGINS
+"""""""""""""""""""
 " Dein Setup
 set runtimepath^=~/.dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
@@ -38,6 +39,7 @@ call dein#add('ap/vim-buftabline')
 " Navigating In-File
 call dein#add('justinmk/vim-sneak')
 call dein#add('scrooloose/nerdcommenter')
+call dein#add('vim-scripts/camelcasemotion')
 " Linting
 call dein#add('neomake/neomake',
     \{'on_cmd': 'Neomake'})
