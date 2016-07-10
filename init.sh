@@ -18,7 +18,7 @@ sudo rm -rf ~/.agignore > /dev/null 2>&1
 echo "Linking settings to desired dotfiles..."
 
 ln -s ~/dotfilez/bash_profile ~/.bash_profile
-ln -s ~/dotfilez/vimrc ~/.vimrc
+ln -s ~/dotfilez/.vimrc ~/.vimrc
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
 ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
 ln -s ~/dotfilez/tmux ~/.tmux
