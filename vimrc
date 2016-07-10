@@ -1,78 +1,140 @@
-set nocompatible
-set backspace=indent,eol,start
-let iCanHazNeoBundle=1
-let neobundle_readme=expand($HOME.'/.vim/bundle/neobundle.vim/README.md')
-if !filereadable(neobundle_readme)
-    echo "Installing NeoBundle.."
-    echo ""
-    silent !mkdir -p $HOME/.vim/bundle
-    silent !git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
-    let iCanHazNeoBundle=0
+if &compatible
+  set nocompatible
 endif
-if has('vim_starting')
-    set rtp+=$HOME/.vim/bundle/neobundle.vim/
-endif
-call neobundle#begin(expand($HOME.'/.vim/bundle/'))
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'dracula/vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mustache/vim-mustache-handlebars'
-NeoBundle 'posva/vim-vue'
-NeoBundle 'marijnh/tern_for_vim'
-NeoBundle 'yggdroot/indentline'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'toranb/tmux-navigator'
-NeoBundle 'toranb/nerd-ack'
-NeoBundle 'toranb/vim-ack'
-NeoBundle 'raimondi/delimitmate'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'justinmk/vim-sneak'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'maksimr/vim-jsbeautify'
-NeoBundle 'wookiehangover/jshint.vim'
-NeoBundle 'scrooloose/syntastic'
-call neobundle#end()
 
-if iCanHazNeoBundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :NeoBundleInstall
+" PLUGINS
+" Dein Setup
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+call dein#begin(expand('~/.vim/dein'))
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+call dein#add('Shougo/dein.vim')
+" Utilities for Other Plugins
+call dein#add('vim-scripts/L9') " Required for FuzzyFinder
+" Theme
+call dein#add('dracula/vim')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+" Niceties
+call dein#add('yggdroot/indentline')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('junegunn/limelight.vim',
+    \{'on_cmd': 'Limelight'})
+" Tmux Corrections
+call dein#add('toranb/tmux-navigator')
+" Filetypes
+call dein#add('pangloss/vim-javascript',
+    \{'on_ft': ['js']})
+call dein#add('mustache/vim-mustache-handlebars',
+    \{'on_ft': ['hbs', 'handlebars']})
+call dein#add('posva/vim-vue',
+    \{'on_ft': ['vue']})
+call dein#add('plasticboy/vim-markdown',
+    \{'on_ft': ['md', 'markdown']})
+" Finding Files
+call dein#add('scrooloose/nerdtree',
+    \{'on_cmd': 'NERDTreeToggle'})
+call dein#add('junegunn/fzf')
+call dein#add('mileszs/ack.vim',
+    \{'on_cmd': 'Ack!'})
+call dein#add('ap/vim-buftabline')
+" Navigating In-File
+call dein#add('justinmk/vim-sneak')
+call dein#add('scrooloose/nerdcommenter')
+" Linting
+call dein#add('neomake/neomake',
+    \{'on_cmd': 'Neomake'})
+" END OF PLUGINS
+call dein#end()
+if dein#check_install() |
+  call dein#install() |
 endif
-NeoBundleCheck
 
-filetype plugin on
-filetype indent on
-set nowrap
-set t_Co=256
-set encoding=utf8
-set number
+"""""""""""""""""""
+" SETTINGS
+"""""""""""""""""""
+" Map Leader
+let mapleader=" "
+" Return to last opened file
+nmap <Leader><Leader> <c-^>
+" Ctrl + c becomes esc
+ino <C-C> <Esc>
+" Copy Paste to Global Clipboard
+set clipboard=unnamed
+" Swap Files
+set backupdir=~/.vim/backup/
+set directory=~/.vim/swap/
+set undodir=~/.vim/undo/
+" Misc Settings
+filetype plugin indent on
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 set undolevels=1000
 set conceallevel=0
-set hidden
-set nobackup
-set noswapfile
-set noerrorbells
+set number " Gutter with Numbers
+set encoding=utf8
 set nowrap
-set clipboard=unnamed
-set autoread
-set autowrite
+set noerrorbells
 
-" vim-airline
+"""""""""""""""""""
+" VIM / NEOVIM CONFIG
+"""""""""""""""""""
+if has('nvim')
+    " NeoVim Config
+    set mouse=r " Disable mouse support in neovim
+else
+    " Regular Vim Config
+    set backspace=indent,eol,start " Fix Backspace to Work As You'd Expect
+endif
+
+"""""""""""""""""""
+" CONFIGURE PLUGINS
+"""""""""""""""""""
+" vim-airline 
 set laststatus=2
-
-" Line Indent Helper
+" vim-javascript
+" TODO Conceal isn't working
+let g:javascript_plugin_jsdoc=1
+let g:javascript_conceal_arrow_function="⇒"
+let g:javascript_conceal_return="⇚"
+let g:javascript_conceal_function="ƒ"
+" nerdtree
+nnoremap <Leader>d :NERDTreeToggle<CR>
+nnoremap <Leader>D :NERDTreeFind<CR>
+" neomake
+autocmd! BufWritePost * Neomake
+" vim-sneak
+nmap f <Plug>SneakForward
+nmap F <Plug>SneakBackward
+let g:sneak#streak = 1
+" ack-vim
+map <Leader>a :Ack!<space>
+if executable('ag') " If Silver Searcher is available instead...
+    let g:ackprg = 'ag --vimgrep --ignore "./q2-app/node_modules"'
+endif
+" fzf (Fuzzy Finding)
+set rtp+=~/.fzf
+map <Leader>ff :FZF<CR>
+" File Buffer
+nnoremap <Tab> :bnext!<CR>
+nnoremap <S-Tab> :bprev!<CR>
+" Limelight
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+autocmd InsertEnter * Limelight
+autocmd! InsertLeave * Limelight!
+" indentline
 let g:indentLine_enabled = 1
-let g:indentLine_char = '⟩'
+let g:indentLine_char = "⟩"
 
-" List chars
+"""""""""""""""""""
+" VISUAL SETTINGS
+"""""""""""""""""""
+" Theme
+syntax enable
+color dracula
+" List Chars
 set list                          " Show invisible characters
 set listchars=""                  " Reset the listchars
 set listchars=tab:__              " a tab should display as "__", trailing whitespace as "."
@@ -81,50 +143,3 @@ set listchars+=extends:>          " The character to show in the last column whe
                                   " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
-" Theme
-syntax enable
-color dracula
-set background=dark
-hi Normal ctermbg=none
-
-" JS Context Coloring
-let g:js_context_colors_enabled = 1
-
-" Sneak
-nmap f <Plug>SneakForward
-nmap F <Plug>SneakBackward
-let g:sneak#streak = 1
-
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#goto_command = "<leader>j"
-let NERDTreeIgnore = ['\.pyc$']
-let g:ctrlp_use_caching=0
-let g:ctrlp_custom_ignore = '\v[\/](build)|dist|tmp|bower_components|node_modules|(\.(swp|git|bak|pyc|swp|DS_Store))$'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_max_files=0
-let g:ctrlp_max_height = 18
-let mapleader=" "
-
-function! s:setup_paste() abort
-    let s:paste = &paste
-    set paste
-endfunction
-
-nnoremap <C-S-n> :CtrlP<CR>
-nnoremap <Leader>ff :CtrlP<CR>
-map <Leader>fb :CtrlPBuffer<CR>
-map <Leader>d :NERDTreeToggle<CR>
-nmap <Leader>nt :NERDTreeFind<CR>
-nmap <Leader><Leader> <c-^>
-nnoremap <Esc><Esc> :nohlsearch<CR>
-map <Leader>a :Ack!<space>
-"map <Leader>a :Ag!<space>
-nnoremap <silent> yp :call <SID>setup_paste()<CR>
-nnoremap <Leader>ed <C-w><C-v><C-l>:e $MYVIMRC<CR>
-
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-let g:SuperTabDefaultCompletionType = "<c-n>"
