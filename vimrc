@@ -10,6 +10,7 @@ call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Shougo/dein.vim')
 " Utilities for Other Plugins
 call dein#add('vim-scripts/L9') " Required for FuzzyFinder
+call dein#add('Shougo/deoplete.nvim') " Autocomplete
 " Theme
 call dein#add('dracula/vim')
 call dein#add('vim-airline/vim-airline')
@@ -100,6 +101,10 @@ let g:javascript_plugin_jsdoc=1
 let g:javascript_conceal_arrow_function="⇒"
 let g:javascript_conceal_return="⇚"
 let g:javascript_conceal_function="ƒ"
+" deoplete (autocomplete)
+let g:deoplete#enable_at_startup = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " nerdtree
 nnoremap <Leader>d :NERDTreeToggle<CR>
 nnoremap <Leader>D :NERDTreeFind<CR>
