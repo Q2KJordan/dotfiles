@@ -17,27 +17,29 @@ Running `init.sh` will **replace** your bash_profile, vim/NeoVim settings, tmux 
 5. Run Init `bash ~/dotfilez/init.sh`
 6. restart terminal
 
+Get started in your project dir with `nvim` and enjoy!
+
 ## Tips
 
 ### Vim/NeoVim Stuffs
 
 * Leader is `<Space>`
 * Navigate Buffers
-  > Next buffer `<Tab>`
-  > Previous buffer `<Shift> + <Tab>`
-  > Reopen last file `<Space> <Space>`
+  * Next buffer `<Tab>`
+  * Previous buffer `<Shift> + <Tab>`
+  * Reopen last file `<Space> <Space>`
 * Mouse support is disabled
-  > (can be enabled in NeoVim with iTerm2 by setting `set mouse=a`)
+  * (can be enabled in NeoVim with iTerm2 by setting `set mouse=a`)
 * Nerdtree (file tree)
-  > Toggle `<Space> d`
-  > Open from current file `<Space> D`
+  * Toggle `<Space> d`
+  * Open from current file `<Space> D`
 * Sneak
-  > `f{char}{char}` sneaks forward
-  > `F{char}{char}` sneaks backward
+  * `f{char}{char}` sneaks forward
+  * `F{char}{char}` sneaks backward
 * Ag (The Silver Searcher)
-  > `<Space> a`
+  * `<Space> a`
 * Fuzzy File Finder
-  > `<Space> ff`
+  * `<Space> ff`
 * Linting happens on file safe
-  > TODO Soon this will happen live!
-  > Use NeoVim if you want this to be async
+  * TODO Soon this will happen live!
+  * Use NeoVim if you want this to be async
