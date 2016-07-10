@@ -50,6 +50,10 @@ Get started in your project dir with `nvim` and enjoy!
   * Sneak
     * `f{char}{char}` sneaks forward
     * `F{char}{char}` sneaks backward
+* Altering Code
+  * Changing Surrounding Code ([See More](https://github.com/tpope/vim-surround))
+    * `cs"'` changes "Wow!" to 'Wow!'
+    * `cs[{` changes [woah: 'neat'] to {woah: 'neat'}
 * Linting happens on file safe
   * TODO Soon this will happen live!
   * Use NeoVim if you want this to be async
