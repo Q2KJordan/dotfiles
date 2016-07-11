@@ -1,4 +1,6 @@
-dist
-bower_components
 node_modules
+bower_components
+dist
 tmp
+docs
+CHANGELOG
