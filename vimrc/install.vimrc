@@ -49,9 +49,10 @@ call dein#add('ap/vim-buftabline')
 " Navigating In-File
 call dein#add('justinmk/vim-sneak')
 call dein#add('scrooloose/nerdcommenter')
-call dein#add('vim-scripts/camelcasemotion')
+call dein#add('vim-scripts/camelcasemotion',
+    \{'on_cmd': 'camelcasemotion'})
 call dein#add('majutsushi/tagbar',
-    \{'on_cmd': 'TagbarToggle'})
+    \{'on_cmd': 'TagbarOpenAutoClose'})
 
 " Linting
 call dein#add('neomake/neomake',
