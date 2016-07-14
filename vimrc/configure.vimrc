@@ -1,7 +1,6 @@
 """""""""""""""""""
 " CONFIGURE PLUGINS
 """""""""""""""""""
-
 " vim-airline 
 set laststatus=2
 
@@ -17,16 +16,10 @@ let g:deoplete#enable_at_startup = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" nerdtree
-nnoremap <Leader>d :NERDTreeToggle<CR>
-nnoremap <Leader>D :NERDTreeFind<CR>
-
 " neomake
 autocmd! BufWritePost * Neomake
 
 " vim-sneak
-nmap f <Plug>SneakForward
-nmap F <Plug>SneakBackward
 let g:sneak#streak = 1
 
 " ack-vim
@@ -37,11 +30,6 @@ endif
 
 " fzf (Fuzzy Finding)
 set rtp+=~/.fzf
-map <Leader>ff :FZF<CR>
-
-" File Buffer
-nnoremap <Tab> :bnext!<CR>
-nnoremap <S-Tab> :bprev!<CR>
 
 " Limelight
 let g:limelight_conceal_ctermfg = 'gray'
