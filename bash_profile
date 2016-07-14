@@ -4,9 +4,8 @@ fi
 alias ag='ag --path-to-agignore ~/.agignore'
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-export NVM_DIR="~/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-export PATH=/usr/local/pcre/bin:$PATH
 
 export PROMPT_COMMAND=__prompt_command  # Func to gen PS1 after CMDs
 
