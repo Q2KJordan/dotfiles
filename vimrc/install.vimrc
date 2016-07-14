@@ -50,6 +50,8 @@ call dein#add('ap/vim-buftabline')
 call dein#add('justinmk/vim-sneak')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('vim-scripts/camelcasemotion')
+call dein#add('majutsushi/tagbar',
+    \{'on_cmd': 'TagbarToggle'})
 
 " Linting
 call dein#add('neomake/neomake',

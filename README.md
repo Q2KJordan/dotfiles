@@ -31,6 +31,7 @@ Get started in your project dir with `nvim` and enjoy!
   * Next buffer `<Tab>`
   * Previous buffer `<Shift> + <Tab>`
   * Reopen last file `<Space> <Space>`
+  * Close buffer `:bd`
 * Mouse support is disabled
   * (can be enabled in NeoVim with iTerm2 by setting `set mouse=a`)
 * Navigating Between Files
@@ -50,6 +51,9 @@ Get started in your project dir with `nvim` and enjoy!
   * Sneak
     * `f{char}{char}` sneaks forward
     * `F{char}{char}` sneaks backward
+  * By Tag
+    * `<Space>t` Opens the tagbar
+    * `:bd` Closes the tagbar
 * Altering Code
   * Changing Surrounding Code ([See More](https://github.com/tpope/vim-surround))
     * `cs"'` changes "Wow!" to 'Wow!'
