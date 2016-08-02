@@ -27,3 +27,6 @@ nmap F <Plug>SneakBackward
 " nerdtree
 nnoremap <Leader>d :NERDTreeToggle<CR>
 nnoremap <Leader>D :NERDTreeFind<CR>
+
+" buffer
+map <Leader>fb :CtrlPBuffer<CR>

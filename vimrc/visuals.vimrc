@@ -3,7 +3,9 @@
 """""""""""""""""""
 " Theme
 syntax enable
-color dracula
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 " List Chars
 set list                          " Show invisible characters
 set listchars=""                  " Reset the listchars

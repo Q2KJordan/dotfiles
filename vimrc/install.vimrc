@@ -12,7 +12,10 @@ call dein#add('vim-scripts/L9') " Required for FuzzyFinder
 call dein#add('Shougo/deoplete.nvim') " Autocomplete
 
 " Theme
-call dein#add('dracula/vim')
+" call dein#add('dracula/vim')
+call dein#add('juanedi/predawn.vim')
+call dein#add('roosta/srcery')
+call dein#add('altercation/vim-colors-solarized.git')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 
@@ -51,8 +54,9 @@ call dein#add('justinmk/vim-sneak')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('vim-scripts/camelcasemotion',
     \{'on_cmd': 'camelcasemotion'})
-call dein#add('majutsushi/tagbar',
-    \{'on_cmd': 'TagbarOpenAutoClose'})
+"call dein#add('majutsushi/tagbar',
+    "\{'on_cmd': 'TagbarOpenAutoClose'})
+call dein#add('ctrlpvim/ctrlp.vim') " ctrlp is buffer manager
 
 " Linting
 call dein#add('neomake/neomake',
