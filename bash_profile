@@ -1,14 +1,21 @@
+# Auto Prefix
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
+
+# ag (The Silver Searcher)
 alias ag='ag --path-to-agignore ~/.agignore'
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
+# Better LS
+alias ls='ls -F'
+
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
+# PS1
 export PROMPT_COMMAND=__prompt_command  # Func to gen PS1 after CMDs
-
 function __prompt_command() {
     local EXIT="$?"             # This needs to be first
 
