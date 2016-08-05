@@ -1,0 +1,40 @@
+# Init Zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Prompt Theme (PS1)
+if [[ ! -n "$ZSHRUN" ]]; then
+    source $HOME/dotfilez/zsh/prompt.zsh
+fi
+
+# Auto start tmux
+if [ "$TMUX" = "" ]; then tmux; fi
+
+# Auto CD, ex: /etc TODO Not working...?
+setopt autocd
+
+# Typo correction
+setopt correctall
+
+# Zsh package manager Antigen
+if [[ ! -f ~/.antigen.zsh ]]; then
+    curl https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen.zsh
+fi
+
+#ANTIGEN_DEFAULT_REPO_URL=https://bitbucket.org/toranb/zsh-components-osx
+source ~/.antigen.zsh
+
+# Plugins
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle git
+antigen bundle brew
+
+# Better LS
+alias ls='ls -F'
+
+# ag (The Silver Searcher)
+alias ag='ag --path-to-agignore ~/.agignore'
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
