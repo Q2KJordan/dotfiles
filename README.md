@@ -10,15 +10,11 @@ Running `init.sh` will **replace** your bash_profile, vim/NeoVim settings, tmux 
 
 ## Install
 
-Be sure your Xcode and Xcode command line tools are installed and up to date.
+Be sure your Xcode _and_ Xcode command line tools are installed and up to date.
 
-1. Get Dein Installer `curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/dein-installer/installer.sh`
-2. Install Dein`sh ~/dein-installer/installer.sh ~/.dein`
-3. Install Other Tools `brew install python3 git tmux ag fzf ctags-exuberant neovim`
-4. Upgrade NeoVim with Python `pip3 install neovim`
-5. Get This Repo `git clone git@github.com:sharpshark28/dotfiles.git ~/dotfilez`
-6. Run Init `bash ~/dotfilez/init.sh`
-7. restart terminal
+1. Get This Repo `git clone git@github.com:sharpshark28/dotfiles.git ~/dotfilez`
+2. Run Init `bash ~/dotfilez/init.sh`
+3. Restart your terminal
 
 Get started in your project dir with `nvim` and enjoy!
 
