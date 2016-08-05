@@ -1,30 +1,35 @@
+# Init Zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Prompt Theme
+# Prompt Theme (PS1)
 if [[ ! -n "$ZSHRUN" ]]; then
     source $HOME/dotfilez/zsh/prompt.zsh
 fi
 
-# Auto CD, ex: /etc
-setopt autocd
-
-# completion
-autoload -U compinit
-compinit
-
-# correction
-setopt correctall
-
-# Auto Prefix
-#if [ -f `brew --prefix`/etc/bash_completion ]; then
-    #. `brew --prefix`/etc/bash_completion
-#fi
-
-# auto start tmux
+# Auto start tmux
 if [ "$TMUX" = "" ]; then tmux; fi
 
+# Auto CD, ex: /etc TODO Not working...?
+setopt autocd
+
+# Typo correction
+setopt correctall
+
+# Zsh package manager Antigen
+if [[ ! -f ~/.antigen.zsh ]]; then
+    curl https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen.zsh
+fi
+
+#ANTIGEN_DEFAULT_REPO_URL=https://bitbucket.org/toranb/zsh-components-osx
+source ~/.antigen.zsh
+
+# Plugins
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle git
+antigen bundle brew
+
 # Better LS
-#alias ls='ls -F'
+alias ls='ls -F'
 
 # ag (The Silver Searcher)
 alias ag='ag --path-to-agignore ~/.agignore'
@@ -33,23 +38,3 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
-# PS1
-#export PROMPT_COMMAND=__prompt_command  # Func to gen PS1 after CMDs
-#function __prompt_command() {
-    #local EXIT="$?"             # This needs to be first
-
-    #local Whi='\[\e[0m\]'
-    #local Red='\[\e[0;31m\]'
-    #local Gre='\[\e[0;32m\]'
-    #local Yel='\[\e[1;33m\]'
-    #local Blu='\[\e[1;34m\]'
-
-    #PS1="${Whi}[ ${Blu}\u${Whi}@${Yel}\h${Whi} ] \W\n"
-
-    #if [ $EXIT != 0 ]; then
-        #PS1+="${Red}⟩${Whi}"      # Add red if exit code non 0
-    #else
-        #PS1+="${Gre}⟩${Whi}"
-    #fi
-#}

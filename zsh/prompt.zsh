@@ -1,4 +1,5 @@
-# Adapted from code by Josh Dick @ <https://gist.github.com/1712320>.
+# Adapted from code by Josh Dick @ <https://gist.github.com/1712320>
+# and Alex Talker's fino zsh theme @ <https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fino.zsh-theme>
 
 setopt prompt_subst
 autoload -U colors && colors # Enable colors in prompt
@@ -72,11 +73,17 @@ autoload -U colors && colors
 # show username@host if root, with username in white
 [[ $UID -eq 0 ]] && prompt_pure_username=' %F{white}%n%f%F{242}@%m%f'
 
+# is echo'ing or normal?
+function prompt_char {
+  git branch >/dev/null 2>/dev/null && echo "±" && return
+  echo '○'
+}
+
 # Set the left-hand prompt
 #PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%
 #%n%⟩"
-PS1="${prompt_pure_username}[%{$fg[yellow]%}%20<...<%~%<<%{$reset_color%}]
-⟩"
+PS1="╭───${prompt_pure_username}[%{$fg[yellow]%}%20<...<%~%<<%{$reset_color%}]
+╰─$(prompt_char) "
 
 # Set the right-hand prompt
 RPS1='$(git_prompt_string)'
