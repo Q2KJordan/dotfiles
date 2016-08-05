@@ -30,5 +30,6 @@ function __prompt_command() {
 #alias
 alias ls="ls -Fp"
 alias tmux="TERM=screen-256color-bce tmux" #might fix vim colorscheme issues with tmux
+
 # LS COLORS
 export CLICOLOR=1
