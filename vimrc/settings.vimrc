@@ -19,6 +19,7 @@ set number " Gutter with Numbers
 set encoding=utf8
 set nowrap
 set noerrorbells
+set hidden
 
 """""""""""""""""""
 " VIM / NEOVIM CONFIG

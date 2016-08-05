@@ -80,8 +80,6 @@ function prompt_char {
 }
 
 # Set the left-hand prompt
-#PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%
-#%n%⟩"
 PS1="╭───${prompt_pure_username}[%{$fg[yellow]%}%20<...<%~%<<%{$reset_color%}]
 ╰─$(prompt_char) "
 
