@@ -47,7 +47,7 @@ call dein#add('scrooloose/nerdtree',
 call dein#add('junegunn/fzf')
 call dein#add('mileszs/ack.vim',
     \{'on_cmd': 'Ack!'})
-call dein#add('ap/vim-buftabline')
+" call dein#add('ap/vim-buftabline')
 
 " Navigating In-File
 call dein#add('justinmk/vim-sneak')

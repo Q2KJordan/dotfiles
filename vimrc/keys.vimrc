@@ -14,8 +14,8 @@ ino <C-C> <Esc>
 nmap <Leader>t :TagbarOpenAutoClose<CR>
 
 " File Buffer
-nnoremap <Tab> :bnext!<CR>
-nnoremap <S-Tab> :bprev!<CR>
+"nnoremap <Tab> :bnext!<CR>
+"nnoremap <S-Tab> :bprev!<CR>
 
 " fzf (Fuzzy Finding)
 map <Leader>ff :FZF<CR>
