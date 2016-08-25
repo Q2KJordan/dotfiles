@@ -34,8 +34,8 @@ set rtp+=~/.fzf
 " Limelight
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
-autocmd InsertEnter * Limelight
-autocmd! InsertLeave * Limelight!
+"autocmd InsertEnter * Limelight
+"autocmd! InsertLeave * Limelight!
 
 " indentline
 let g:indentLine_enabled = 1

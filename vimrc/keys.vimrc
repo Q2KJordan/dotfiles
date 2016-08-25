@@ -30,3 +30,14 @@ nnoremap <Leader>D :NERDTreeFind<CR>
 
 " buffer
 map <Leader>fb :CtrlPBuffer<CR>
+
+
+" turn off arrows keys cus we aren't a bitch
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>

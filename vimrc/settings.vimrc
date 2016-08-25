@@ -16,6 +16,7 @@ set expandtab
 set undolevels=1000
 set conceallevel=0
 set number " Gutter with Numbers
+set relativenumber " Gutter with Relative Line Numbers
 set encoding=utf8
 set nowrap
 set noerrorbells
