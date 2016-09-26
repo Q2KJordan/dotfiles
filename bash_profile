@@ -29,7 +29,10 @@ function __prompt_command() {
 
 #alias
 alias ls="ls -Fp"
+alias vim="nvim"
 alias tmux="TERM=screen-256color-bce tmux" #might fix vim colorscheme issues with tmux
-
+#alias jeffHistory = history | awk '{ count[$2]++ } END { for (cmd in count) { print count[cmd] " " cmd } }' | sort -rn | head -20
 # LS COLORS
 export CLICOLOR=1
+
+export PATH=$PATH:/usr/local/bin/python3.5
