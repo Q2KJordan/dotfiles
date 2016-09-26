@@ -1,7 +1,6 @@
-# Joe Wroten's Dotfiles
-Develop using just the terminal with the very best tools. iTerm2, NeoVim, The Silver Searcher, FuzzyFinder, Dein, and more!
+# Kendall Jordan's Dotfiles
 
-> Inspired by [Toran B.](https://twitter.com/toranb) 's dotfiles who got me started with my modern workflow.💙
+> Inspired by Joe W./[Toran B.](https://twitter.com/toranb) 's dotfiles 
 
 ## Please Note
 This is intended to set up a developers environment from the ground up.
@@ -10,7 +9,7 @@ Running `init.sh` will **replace** your bash_profile, vim/NeoVim settings, tmux 
 
 ## Install
 
-Be sure your Xcode and Xcode command line tools are installed and up to date.
+Be sure your Xcode and Xcode command line tools are installed and up to date. GL
 
 1. Get Dein Installer `curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/dein-installer/installer.sh`
 2. Install Dein`sh ~/dein-installer/installer.sh ~/.dein`
@@ -20,16 +19,13 @@ Be sure your Xcode and Xcode command line tools are installed and up to date.
 6. Run Init `bash ~/dotfilez/init.sh`
 7. restart terminal
 
-Get started in your project dir with `nvim` and enjoy!
-
 ## Tips
 
-### Vim/NeoVim Stuffs
+### Vim/NeoVim 
 
-* Leader is `<Space>`
+* Leader is `<space>`
 * Navigate Buffers
-  * Next buffer `<Tab>`
-  * Previous buffer `<Shift> + <Tab>`
+  * View buffer `<space> fb` 
   * Reopen last file `<Space> <Space>`
   * Close buffer `:bd`
 * Mouse support is disabled
@@ -58,6 +54,4 @@ Get started in your project dir with `nvim` and enjoy!
   * Changing Surrounding Code ([See More](https://github.com/tpope/vim-surround))
     * `cs"'` changes "Wow!" to 'Wow!'
     * `cs[{` changes [woah: 'neat'] to {woah: 'neat'}
-* Linting happens on file safe
-  * TODO Soon this will happen live!
-  * Use NeoVim if you want this to be async
+* Linting happens on file save
