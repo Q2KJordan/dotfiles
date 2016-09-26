@@ -3,9 +3,11 @@
 """""""""""""""""""
 " Theme
 syntax enable
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+"set background=dark
+"let g:solarized_termcolors=256
+colorscheme nova
+set notermguicolors
+
 " List Chars
 set list                          " Show invisible characters
 set listchars=""                  " Reset the listchars

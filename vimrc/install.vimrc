@@ -13,6 +13,7 @@ call dein#add('Shougo/deoplete.nvim') " Autocomplete
 
 " Theme
 " call dein#add('dracula/vim')
+call dein#add('trevordmiller/nova-vim')
 call dein#add('juanedi/predawn.vim')
 call dein#add('roosta/srcery')
 call dein#add('altercation/vim-colors-solarized.git')

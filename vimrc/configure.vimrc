@@ -12,9 +12,10 @@ let g:javascript_conceal_return="⇚"
 let g:javascript_conceal_function="ƒ"
 
 " deoplete (autocomplete)
-let g:deoplete#enable_at_startup = 1
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+"let g:deoplete#enable_at_startup = 1
+"let g:python3_host_prog = '/usr/local/bin/python3.5'
+"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " neomake
 autocmd! BufWritePost * Neomake
