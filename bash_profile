@@ -31,8 +31,11 @@ function __prompt_command() {
 alias ls="ls -Fp"
 alias vim="nvim"
 alias tmux="TERM=screen-256color-bce tmux" #might fix vim colorscheme issues with tmux
+alias embertk="ember t -s --query grep=kendall"
+alias turboClean="cd ~/ngam && git clean -xfd && npm i && grunt prereq && cd -"
+alias spotClean="cd ~/ngam/q2-uux && rm -rf node_modules/q2-* && npm i && cd -"
 #alias jeffHistory = history | awk '{ count[$2]++ } END { for (cmd in count) { print count[cmd] " " cmd } }' | sort -rn | head -20
 # LS COLORS
 export CLICOLOR=1
 
-export PATH=$PATH:/usr/local/bin/python3.5
+export PATH=/Users/kjordan/.local/bin:/usr/local/bin/python3.5:/usr/local/bin/stack:$PATH

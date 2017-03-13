@@ -19,12 +19,14 @@ call dein#add('roosta/srcery')
 call dein#add('altercation/vim-colors-solarized.git')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
+call dein#add('RussellBradley/vim-rockets-away.git')
 
 " Visual Niceties
 call dein#add('yggdroot/indentline')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('junegunn/limelight.vim',
     \{'on_cmd': 'Limelight'})
+call dein#add('dustinfarris/vim-htmlbars-inline-syntax')
 
 " Tmux Corrections
 call dein#add('toranb/tmux-navigator')

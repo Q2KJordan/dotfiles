@@ -31,6 +31,9 @@ nnoremap <Leader>D :NERDTreeFind<CR>
 " buffer
 map <Leader>fb :CtrlPBuffer<CR>
 
+" 420 no scope mode
+map <Leader>hi :set cursorline! cursorcolumn!<CR>
+
 
 " turn off arrows keys cus we aren't a bitch
 map <up> <nop>

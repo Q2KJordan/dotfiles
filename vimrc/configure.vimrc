@@ -41,3 +41,6 @@ let g:limelight_conceal_ctermfg = 240
 " indentline
 let g:indentLine_enabled = 1
 let g:indentLine_char = "⟩"
+
+let g:airline_powerline_fonts=1
+set formatoptions-=or

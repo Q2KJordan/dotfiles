@@ -3,10 +3,16 @@
 """""""""""""""""""
 " Theme
 syntax enable
-"set background=dark
+set background=dark
 "let g:solarized_termcolors=256
 colorscheme nova
-set notermguicolors
+hi clear
+hi String ctermfg=81 ctermbg=NONE cterm=NONE guifg=#5fd7ff guibg=NONE gui=NONE
+hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white
+
+"set notermguicolors
+set t_Co=256
+set t_ut=
 
 " List Chars
 set list                          " Show invisible characters
