@@ -44,3 +44,7 @@ let g:indentLine_char = "⟩"
 
 let g:airline_powerline_fonts=1
 set formatoptions-=or
+
+" spellcheck
+autocmd BufRead COMMIT_EDITMSG setlocal spell spelllang=en_us
+autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown,*.txt set spell spelllang=en_us
