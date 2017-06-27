@@ -6,6 +6,7 @@ syntax enable
 set background=dark
 let g:solarized_termcolors=256
 "colorscheme nova
+"color nova
 hi clear
 hi String ctermfg=81 ctermbg=NONE cterm=NONE guifg=#5fd7ff guibg=NONE gui=NONE
 "hi SpellBad cterm=underline ctermfg=red

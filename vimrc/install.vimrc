@@ -16,6 +16,7 @@ call dein#add('Shougo/deoplete.nvim') " Autocomplete
 call dein#add('trevordmiller/nova-vim')
 call dein#add('juanedi/predawn.vim')
 call dein#add('roosta/srcery')
+call dein#add('crusoexia/vim-monokai')
 call dein#add('altercation/vim-colors-solarized.git')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')

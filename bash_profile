@@ -40,3 +40,4 @@ alias spotClean="cd ~/ngam/q2-uux && rm -rf node_modules/q2-* && npm i && cd -"
 export CLICOLOR=1
 
 export PATH=/Users/kjordan/.local/bin:/usr/local/bin/python3.5:/usr/local/bin/stack:$PATH
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
