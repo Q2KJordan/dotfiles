@@ -4,16 +4,16 @@
 " Theme
 syntax enable
 set background=dark
-let g:solarized_termcolors=256
-"colorscheme nova
+"let g:solarized_termcolors=256
+colorscheme monokai
 "color nova
-hi clear
-hi String ctermfg=81 ctermbg=NONE cterm=NONE guifg=#5fd7ff guibg=NONE gui=NONE
+"hi clear
+"hi String ctermfg=81 ctermbg=NONE cterm=NONE guifg=#5fd7ff guibg=NONE gui=NONE
 "hi SpellBad cterm=underline ctermfg=red
 
-set notermguicolors
-set t_Co=256
-set t_ut=
+"set notermguicolors
+"set t_Co=256
+"set t_ut=
 
 " List Chars
 set list                          " Show invisible characters
