@@ -7,6 +7,9 @@ call dein#begin(expand('~/.vim/dein'))
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Shougo/dein.vim')
 
+
+call dein#add('gabrielelana/vim-markdown')
+
 " Utilities for Other Plugins
 call dein#add('vim-scripts/L9') " Required for FuzzyFinder
 call dein#add('Shougo/deoplete.nvim') " Autocomplete
@@ -15,6 +18,7 @@ call dein#add('Shougo/deoplete.nvim') " Autocomplete
 " call dein#add('dracula/vim')
 call dein#add('trevordmiller/nova-vim')
 call dein#add('juanedi/predawn.vim')
+call dein#add('junegunn/seoul256.vim')
 call dein#add('roosta/srcery')
 call dein#add('crusoexia/vim-monokai')
 call dein#add('altercation/vim-colors-solarized.git')
@@ -28,6 +32,8 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add('junegunn/limelight.vim',
     \{'on_cmd': 'Limelight'})
 call dein#add('dustinfarris/vim-htmlbars-inline-syntax')
+call dein#add('leafgarland/typescript-vim')
+call dein#add('Quramy/vim-js-pretty-template')
 
 " Tmux Corrections
 call dein#add('toranb/tmux-navigator')

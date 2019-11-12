@@ -5,8 +5,9 @@
 syntax enable
 set background=dark
 "let g:solarized_termcolors=256
-colorscheme monokai
-"color nova
+let g:seoul256_background = 234
+"colorscheme monokai
+color seoul256
 "hi clear
 "hi String ctermfg=81 ctermbg=NONE cterm=NONE guifg=#5fd7ff guibg=NONE gui=NONE
 "hi SpellBad cterm=underline ctermfg=red
