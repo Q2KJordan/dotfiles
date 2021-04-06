@@ -56,3 +56,6 @@ export CLICOLOR=1
 
 export PATH=/Users/kjordan/.local/bin:/usr/local/bin/python3.5:/usr/local/bin/stack:$PATH
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
